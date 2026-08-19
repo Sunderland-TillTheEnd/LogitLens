@@ -51,6 +51,10 @@ pip install -r requirements.txt
 pip install torch --index-url https://download.pytorch.org/whl/cu121
 ```
 
+## 创建目录
+参照上文给出的文件目录结构，在主文件夹内新建名为models的空文件夹。
+（不必创建logs文件夹，脚本会自动创建）
+
 ## 下载模型
 
 脚本通过 `transformers` 加载 **Qwen2.5-3B-Instruct**（safetensors 格式，约 6GB）。
@@ -75,14 +79,12 @@ mklink /J models\Qwen2.5-3B-Instruct D:\LLM_models\Qwen2.5-3B-Instruct
 **命令行聊天（前序测试）**：
 
 ```bash
-cd to_git
 python chat.py     # 输入 exit / 退出 结束
 ```
 
 **Logit Lens 可视化（主脚本）**：
 
 ```bash
-cd to_git
 python logit_lens_hf.py                    # 默认提示词，生成 8 个 token
 python logit_lens_hf.py "床前明月光，" 5   # 自定义提示词 + 生成 5 个 token
 ```
